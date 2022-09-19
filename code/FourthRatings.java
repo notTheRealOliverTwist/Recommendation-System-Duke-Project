@@ -1,8 +1,8 @@
 /*
- * 
+ * Ratings Class used to compile all user / movie ratings with various helper methods to access the information
+ * These ratings are then used to recommend alterantive movies to a user based on a weighted average calculation from other users / movie ratings
  * 
  * @NotReallyOliverTwist 
- * @version
  */
 
 import java.util.*;
@@ -49,7 +49,7 @@ public class FourthRatings {
 			ArrayList<String> movieList = MovieDatabase.filterBy(new TrueFilter());
 			double avg = 0.00;
 		};
-		System.out.println("Movie List Size: "+ wrapper.movieList.size());
+
 		wrapper.movieList.forEach(name ->{
 			wrapper.avg = getAverageByID(name, minimalRaters);
 			if(wrapper.avg != 0.00){
@@ -71,7 +71,6 @@ public class FourthRatings {
 			ArrayList<String> movieList = MovieDatabase.filterBy(filterCriteria);
 			double avg = 0.00;
 		};
-		System.out.println("Movie List Size: "+ wrapper.movieList.size());
 		wrapper.movieList.forEach(name ->{
 			wrapper.avg = getAverageByID(name, minimalRaters);
 			if(wrapper.avg != 0.00){
